@@ -1,6 +1,6 @@
 import './airconditions.css'
 
-const Feel = function feel({ title, link, temp }) {
+const Feel = function feel({ title, link, temp, deg, persentage, speed }) {
   return (
     <div className="feel">
       <div className="feel-title">
@@ -8,14 +8,14 @@ const Feel = function feel({ title, link, temp }) {
         <span>{title}</span>
       </div>
       <div className="feel-temp">
-        <p>{temp}</p>
+        <p>{temp} {deg} {persentage} {speed}</p>
       </div>
 
     </div>
   )
 }
 
-const airconditions = () => {
+const airconditions = ({ wind, main, rain }) => {
   return (
     <div>
       <div className="container pt-3 airconditions">
@@ -27,10 +27,10 @@ const airconditions = () => {
 
         </div>
         <div className='feels'>
-          <Feel title="Real Feel" link="fas fa-temperature-half" temp="20 &deg;" />
-          <Feel title="wind" link="fas fa-wind" temp="0.2 km/h" />
-          <Feel title="Chance of rain" link="fa-solid fa-droplet" temp="0 %" />
-          <Feel title="UV Index" link="fa-solid fa-sun" temp="3" />
+          <Feel title="Real Feel" link="fas fa-temperature-half" temp={main.temp} deg="&deg;" />
+          <Feel title="wind" link="fas fa-wind" temp={wind.speed} speed={"km/h"} />
+          <Feel title="Chance of rain" link="fa-solid fa-droplet" temp={rain} persentage="0 %" />
+          <Feel title="Humidity" link="fa-solid fa-sun" temp={main.humidity} persentage="%" />
 
         </div>
       </div>

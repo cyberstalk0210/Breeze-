@@ -35,22 +35,36 @@ class App extends Component {
         { day: "Sat", link: "/img/rain.png", text: "Rainy", temp: "37/21", key: 6 },
         { day: "Sun", link: "/img/sun.png", text: "Sunny", temp: "37/21", key: 7 },
       ]
-      , data: []
-      
+      , Weatherdata: [],
+      response: [],
+      main: [],
+      location: [
+        "Uzbekistan"
+      ],
+      wind: [],
     }
-    this.Api_url = `https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=f2cde4bd2f2fe1241dd80c27a8c44164`
+    const states = this.state
+    // eslint-disable-next-line no-restricted-globals
+    this.Api_url = `https://api.openweathermap.org/data/2.5/weather?q=${states.location}&units=metric&appid=f2cde4bd2f2fe1241dd80c27a8c44164`
   }
   componentDidMount() {
     fetch(this.Api_url).then(res => res.json())
-      .then(response => this.setState({ data: response }))
-    // .then(response => console.log(response))
+      .then(response => this.setState({
+        Weatherdata: response.weather,
+        response: response,
+        main: response.main,
+        location: response.name,
+        wind: response.wind,
+      }))
   }
 
-  searchHandler = (arr, term) => {
-    if (term.length === 0) {
-      return this.data
-    }
-    return arr.filter(item => item.name.toLowerCase().indexOf(term) > -1)
+  searchHandler = (e) => {
+    const location = e
+    this.setState(() => {
+      return {
+        location: location
+      }
+    })
   }
 
   render() {
@@ -64,11 +78,11 @@ class App extends Component {
         </div>
 
         <div className='home-page'>
-          <SearchPanel />
-          <HomePage props={data.data} main={data.data.main} />
+          <SearchPanel searchHandler={this.searchHandler} />
+          <HomePage props={data.response} main={data.main} weather={data.Weatherdata} />
           <Todayforecast props={data.forecast} />
 
-          <Airconditions />
+          <Airconditions wind={data.wind} main={data.main} weather={data.Weatherdata} rain={data.response.rain} />
         </div>
 
         <div className='right-bar'>

@@ -1,5 +1,5 @@
 import './home.css'
-const home = function home({ props, main }) {
+const home = function home({ props, main, weather }) {
   return (
     <div>
       <div className='container pb-3'>
@@ -10,11 +10,17 @@ const home = function home({ props, main }) {
               {props.name}
             </h1>
             <div className="gradus">
-              {/* <h1 className='text'> {console.log(props.main.temp)}&deg;</h1> */}
+              <h1 className='text'> {main.temp}&deg;</h1>
+              <p>{weather.map(item => (
+                item.main
+              ))}</p>
             </div>
           </div>
           <div className="weather-icon">
             <div className="image-sun">
+              {weather.map(item => (
+                item.icon
+              ))}
             </div>
           </div>
         </div>
@@ -22,5 +28,6 @@ const home = function home({ props, main }) {
     </div>
   )
 }
+
 
 export default home
