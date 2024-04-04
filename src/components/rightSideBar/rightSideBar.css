@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title-s p {
+
+  flex-grow: 1;
+  margin: 0px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0px;
+  line-height: 28px;
+  white-space: pre-line;
+  word-break: break-word;
+  opacity: 1;
+  visibility: visible;
+  color: #9399a2ff;
+  background-color: #202B3B;
+  padding: 0.6rem;
+  border-radius: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-left: 1rem;
+}
+
+.card-bodies {
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  align-content: space-evenly;
+  justify-items: center;
+}
+
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days {
+  color: #9399a2ff;
+}
+
+.weather-info {
+  font-size: 18px;
+  font-weight: 500;
+  color: silver;
+}
+
+.w-temp {
+  font-weight: 500;
+}
+
+.w-image {
+  width: 50px;
+  /* height: 60px; */
+}
+
+.w-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.allCard {
+  width: 100%;
+}
+
+.component {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #202B3B;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

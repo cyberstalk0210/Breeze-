@@ -1,0 +1,67 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+@import url('https://fonts.cdnfonts.com/css/gelion');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gelion, Helvetica, "Helvetica Neue", Arial;
+  user-select: none;
+  margin: 0 auto;
+}
+
+.containers {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0fr 2fr 1fr;
+  grid-auto-flow: row;
+  align-content: center;
+  justify-items: center;
+  padding: 1rem;
+  /* padding-top: 0; */
+  margin-top: 0;
+  gap: 1.5rem;
+}
+
+.side-bar {
+  width: 100%;
+  height: 100%;
+  /* background-color: #202B3B; */
+  border-radius: 18px;
+  align-items: center;
+  justify-items: center;
+  align-content: space-between;
+  grid-column: 1/2;
+  margin-left: 1rem;
+}
+
+
+.search-panel {
+  width: 100%;
+}
+
+.home-page {
+  width: 100%;
+  height: 100%;
+  align-items: start;
+  justify-content: center;
+  display: block;
+  /* grid-template-rows: repeat(3, 0fr); */
+  align-content: stretch;
+  justify-items: stretch;
+  grid-column: 3/2;
+  grid-row: 1/1;
+  gap: .7rem;
+}
+
+.right-bar {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  display: block;
+  /* grid-column: 3/3; */
+}

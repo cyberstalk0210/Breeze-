@@ -1,0 +1,36 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+@import url('https://fonts.cdnfonts.com/css/gelion');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gelion, Helvetica, "Helvetica Neue", Arial;
+}
+
+.btn {
+  color: #fff;
+  font-size: 160%;
+  /* background-color: red; */
+}
+
+
+.btn p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+
+.emoji.change,
+.text.change {
+  color: gray;
+}
+
+.icons {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
